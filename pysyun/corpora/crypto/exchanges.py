@@ -22,3 +22,25 @@ class CoinAPICurrencyAbbreviations:
         results = set(results)    
         results = list(results)        
         return results
+
+class CoinMarketCapCurrencyAbbreviations:
+
+    def __init__(self, apiKey):
+        self.apiKey = apiKey
+
+    def process(self):
+        
+        results = []
+        
+        headers = {
+            'X-CMC_PRO_API_KEY':  self.apiKey
+        }
+        response = requests.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', headers=headers)
+        response = json.loads(response.text)
+        
+        for item in response['data']:
+            results.append(item['symbol'])
+        
+        results = set(results)    
+        results = list(results)        
+        return results
