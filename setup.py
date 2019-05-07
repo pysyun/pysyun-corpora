@@ -6,6 +6,6 @@ setup (
    description = 'Syun\'s Python SDK for time series analysis. Text corpora for segmenting textual time-series by domains.',
    author = 'Py Syun',
    author_email = 'pysyun@vitche.com',
-   py_modules = ['pysyun.corpora.blockchain'],
+   py_modules = ['pysyun.corpora.blockchain', 'pysyun.corpora.crypto.exchanges'],
    install_requires = []
 )
