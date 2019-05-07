@@ -44,3 +44,53 @@ class CoinMarketCapCurrencyAbbreviations:
         results = set(results)    
         results = list(results)        
         return results
+
+class PoloniexCurrencyAbbreviations:
+
+    def process(self):
+        
+        results = []
+        
+        response = requests.get('https://poloniex.com/public?command=returnCurrencies')
+        response = json.loads(response.text)
+        
+        for key in response:
+            results.append(key)
+        
+        results = set(results)    
+        results = list(results)        
+        return results
+    
+ class EXMOCurrencyAbbreviations:
+
+    def process(self):
+        
+        results = []
+        
+        response = requests.get('https://api.exmo.com/v1/currency/')
+        response = json.loads(response.text)
+        
+
+        
+        for key in response:
+            results.append(key)
+        
+        results = set(results)    
+        results = list(results)        
+        return results
+    
+class CEXCurrencyAbbreviations:
+
+    def process(self):
+        
+        results = []
+        
+        response = requests.get('https://cex.io/api/currency_limits')
+        response = json.loads(response.text)
+        
+        for pair in response['data']['pairs']:
+            results.append(pair['symbol1'])
+        
+        results = set(results)    
+        results = list(results)        
+        return results
