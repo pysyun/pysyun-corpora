@@ -60,8 +60,8 @@ class PoloniexCurrencyAbbreviations:
         results = set(results)    
         results = list(results)        
         return results
-    
- class EXMOCurrencyAbbreviations:
+
+class EXMOCurrencyAbbreviations:
 
     def process(self):
         
@@ -69,9 +69,7 @@ class PoloniexCurrencyAbbreviations:
         
         response = requests.get('https://api.exmo.com/v1/currency/')
         response = json.loads(response.text)
-        
 
-        
         for key in response:
             results.append(key)
         
