@@ -35,7 +35,7 @@ class CoinMarketCapCurrencyAbbreviations:
         headers = {
             'X-CMC_PRO_API_KEY':  self.apiKey
         }
-        response = requests.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', headers=headers)
+        response = requests.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/map', headers=headers)
         response = json.loads(response.text)
         
         for item in response['data']:
