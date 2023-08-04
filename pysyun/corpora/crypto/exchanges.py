@@ -1,10 +1,11 @@
 import requests
 import json
 
+
 class CoinAPICurrencyAbbreviations:
 
-    def __init__(self, apiKey):
-        self.apiKey = apiKey
+    def __init__(self, api_key):
+        self.apiKey = api_key
 
     def process(self):
         
@@ -23,10 +24,11 @@ class CoinAPICurrencyAbbreviations:
         results = list(results)        
         return results
 
+
 class CoinMarketCapCurrencyAbbreviations:
 
-    def __init__(self, apiKey):
-        self.apiKey = apiKey
+    def __init__(self, api_key):
+        self.apiKey = api_key
 
     def process(self):
         
@@ -45,6 +47,7 @@ class CoinMarketCapCurrencyAbbreviations:
         results = list(results)        
         return results
 
+
 class PoloniexCurrencyAbbreviations:
 
     def process(self):
@@ -61,6 +64,7 @@ class PoloniexCurrencyAbbreviations:
         results = list(results)        
         return results
 
+
 class EXMOCurrencyAbbreviations:
 
     def process(self):
@@ -76,7 +80,8 @@ class EXMOCurrencyAbbreviations:
         results = set(results)    
         results = list(results)        
         return results
-    
+
+
 class CEXCurrencyAbbreviations:
 
     def process(self):
