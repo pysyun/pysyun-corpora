@@ -1,7 +1,5 @@
-import json
-
 from web3 import Web3
-from abi import UniswapPairABI
+from pysyun.corpora.web3.abi import UniswapPairABI
 
 
 class UniswapPairMetadata:
